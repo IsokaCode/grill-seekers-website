@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Grill Seekers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            min-height: 100vh;
+        }
+        
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #d4af37;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: -3rem -3rem 3rem -3rem;
+        }
+        
+        .privacy-header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .privacy-header p {
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        .privacy-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #fafafa;
+            border-radius: 10px;
+            border-left: 5px solid #d4af37;
+        }
+        
+        .privacy-section h2 {
+            color: #2c2c2c;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .privacy-section h3 {
+            color: #2c2c2c;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+        
+        .privacy-section p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .privacy-section li {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .privacy-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .privacy-section strong {
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .contact-info h3 {
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
+        
+        .contact-info p, .contact-info li {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .contact-info ul {
+            margin-left: 2rem;
+        }
+        
+        .contact-info strong {
+            color: #d4af37;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .back-link:hover {
+            background: linear-gradient(135deg, #b8941f 0%, #9a7d1a 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .back-link i {
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-container {
+                margin: 1rem;
+                padding: 2rem;
+            }
+            
+            .privacy-header {
+                margin: -2rem -2rem 2rem -2rem;
+                padding: 1.5rem;
+            }
+            
+            .privacy-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .privacy-section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .privacy-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .privacy-section h3 {
+                font-size: 1.3rem;
+            }
+            
+            .contact-info {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .privacy-container {
+                margin: 0.5rem;
+                padding: 1.5rem;
+            }
+            
+            .privacy-header {
+                margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+                padding: 1rem;
+            }
+            
+            .privacy-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .privacy-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <img src="/grillseekers bbq and catering.png" alt="Grill Seekers" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#menu" class="nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <p>Last updated: January 2025</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>1. Introduction</h2>
+            <p>Grill Seekers ("we," "our," or "us") is committed to protecting your privacy and personal data. This Privacy Policy explains how we collect, use, store, and protect your personal information when you visit our website or use our catering services.</p>
+            <p>We are the data controller for the personal data we process. If you have any questions about this Privacy Policy, please contact us using the details provided at the end of this document.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>2. Information We Collect</h2>
+            
+            <h3>2.1 Information You Provide Directly</h3>
+            <p>When you contact us or make a booking, we may collect:</p>
+            <ul>
+                <li><strong>Contact Information:</strong> Name, email address, phone number</li>
+                <li><strong>Event Details:</strong> Event date, event type, guest count, venue address</li>
+                <li><strong>Service Preferences:</strong> Menu selections, dietary requirements, special requests</li>
+                <li><strong>Marketing Preferences:</strong> Whether you consent to receive marketing communications</li>
+                <li><strong>Communication Records:</strong> Any messages or correspondence you send to us</li>
+            </ul>
+
+            <h3>2.2 Information We Collect Automatically</h3>
+            <p>When you visit our website, we may automatically collect:</p>
+            <ul>
+                <li><strong>Technical Information:</strong> IP address, browser type, device information, operating system</li>
+                <li><strong>Usage Data:</strong> Pages visited, time spent on site, referring website</li>
+                <li><strong>Cookies:</strong> Small text files stored on your device (see our Cookie Policy below)</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use your personal data for the following purposes:</p>
+            
+            <h3>3.1 Service Delivery</h3>
+            <ul>
+                <li>Processing and managing your catering bookings</li>
+                <li>Communicating with you about your event</li>
+                <li>Providing customer support and responding to inquiries</li>
+                <li>Coordinating event logistics and service delivery</li>
+            </ul>
+
+            <h3>3.2 Legal Compliance</h3>
+            <ul>
+                <li>Maintaining records for tax and accounting purposes</li>
+                <li>Complying with food safety and hygiene regulations</li>
+                <li>Meeting legal obligations and regulatory requirements</li>
+            </ul>
+
+            <h3>3.3 Marketing (with your consent)</h3>
+            <ul>
+                <li>Sending promotional emails about our services</li>
+                <li>Sharing special offers and seasonal menus</li>
+                <li>Inviting you to events or tastings</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>4. Legal Basis for Processing</h2>
+            <p>Under UK GDPR, we process your personal data based on:</p>
+            <ul>
+                <li><strong>Contract:</strong> To fulfill our catering services agreement with you</li>
+                <li><strong>Legitimate Interest:</strong> To improve our services and website functionality</li>
+                <li><strong>Consent:</strong> For marketing communications (you can withdraw at any time)</li>
+                <li><strong>Legal Obligation:</strong> To comply with applicable laws and regulations</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>5. Data Sharing and Third Parties</h2>
+            <p>We do not sell, trade, or rent your personal data to third parties. We may share your information only in the following circumstances:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> With trusted third parties who help us operate our business (e.g., email service providers, payment processors)</li>
+                <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
+                <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>6. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+            <ul>
+                <li>Secure data transmission using SSL encryption</li>
+                <li>Regular security updates and monitoring</li>
+                <li>Access controls and staff training</li>
+                <li>Secure data storage and backup procedures</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>7. Data Retention</h2>
+            <p>We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy:</p>
+            <ul>
+                <li><strong>Booking Information:</strong> 7 years (for tax and accounting records)</li>
+                <li><strong>Marketing Data:</strong> Until you withdraw consent or opt out</li>
+                <li><strong>Website Analytics:</strong> 26 months (Google Analytics default)</li>
+                <li><strong>Communication Records:</strong> 3 years from last contact</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>8. Your Rights</h2>
+            <p>Under UK GDPR, you have the following rights regarding your personal data:</p>
+            <ul>
+                <li><strong>Access:</strong> Request copies of your personal data</li>
+                <li><strong>Rectification:</strong> Correct inaccurate or incomplete data</li>
+                <li><strong>Erasure:</strong> Request deletion of your personal data</li>
+                <li><strong>Restriction:</strong> Limit how we process your data</li>
+                <li><strong>Portability:</strong> Receive your data in a structured format</li>
+                <li><strong>Objection:</strong> Object to processing based on legitimate interests</li>
+                <li><strong>Withdraw Consent:</strong> Withdraw consent for marketing communications</li>
+            </ul>
+            <p>To exercise these rights, please contact us using the details below.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>9. Cookies</h2>
+            <p>Our website uses cookies to improve your browsing experience. We use:</p>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Required for website functionality</li>
+                <li><strong>Analytics Cookies:</strong> To understand how visitors use our site</li>
+            </ul>
+            <p>You can control cookie settings through your browser preferences. Note that disabling cookies may affect website functionality.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>10. Children's Privacy</h2>
+            <p>Our services are not directed to children under 16. We do not knowingly collect personal data from children under 16. If you believe we have collected such information, please contact us immediately.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>11. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> info@grillseekers.co.uk</li>
+                <li><strong>Phone:</strong> +44 7856 450376</li>
+                <li><strong>Address:</strong> Grill Seekers, United Kingdom</li>
+            </ul>
+            <p>You also have the right to lodge a complaint with the Information Commissioner's Office (ICO) if you believe we have not handled your personal data in accordance with the law.</p>
+        </div>
+
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Grill Seekers</h3>
+                <p>Premium BBQ catering services for all occasions</p>
+                <div class="social-links">
+                    <a href="https://wa.me/447856450376" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:info@grillseekers.co.uk"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#menu">Menu</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> +44 7856 450376</p>
+                <p><i class="fas fa-envelope"></i> info@grillseekers.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Grill Seekers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
