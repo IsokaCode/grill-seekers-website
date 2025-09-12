@@ -12,7 +12,13 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       input: {
-        main: './index.html'
+        main: './index.html',
+        about: './about.html',
+        menu: './menu.html',
+        packages: './packages.html',
+        gallery: './gallery.html',
+        reviews: './reviews.html',
+        'privacy-policy': './privacy-policy.html'
       }
     }
   },
