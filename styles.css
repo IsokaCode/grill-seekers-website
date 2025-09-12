@@ -846,7 +846,7 @@ p {
 
 /* How We Work Section */
 .how-we-work {
-    padding: 0;
+    padding: 4rem 0;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(5px);
 }
@@ -855,7 +855,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-bottom: 4rem;
+    margin: 3rem 0 4rem;
 }
 
 .process-step {
@@ -2091,6 +2091,10 @@ p {
     
     .process-steps {
         grid-template-columns: 1fr;
+    }
+    
+    .how-we-work {
+        padding: 3rem 0;
     }
     
     /* Extra small screen FAQ optimization */
