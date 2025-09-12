@@ -1,23 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { copyFileSync } from 'fs';
-import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    {
-      name: 'copy-script',
-      writeBundle() {
-        // Copy script.js to dist folder
-        copyFileSync(
-          resolve(__dirname, 'script.js'),
-          resolve(__dirname, 'dist/script.js')
-        );
-      }
-    }
-  ],
+  plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
