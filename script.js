@@ -11,25 +11,23 @@ navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         const href = link.getAttribute('href');
         
-        // If it's a section link (starts with #) or contains # (like index.html#contact), handle smooth scrolling
-        if (href.startsWith('#') || href.includes('#')) {
+        // If it's a section link (starts with #), handle smooth scrolling
+        if (href.startsWith('#')) {
             e.preventDefault();
-            
-            // Extract the section ID from the href
-            const sectionId = href.includes('#') ? href.split('#')[1] : href.substring(1);
-            const targetSection = document.querySelector(`#${sectionId}`);
+            const targetSection = document.querySelector(href);
             
             if (targetSection) {
-                const headerHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight;
+                const navbar = document.querySelector('.navbar');
+                const headerHeight = navbar ? navbar.offsetHeight : 90;
+                const targetPosition = targetSection.offsetTop - headerHeight - 20; // Extra 20px for better spacing
                 
                 window.scrollTo({
-                    top: targetPosition,
+                    top: Math.max(0, targetPosition), // Ensure we don't scroll to negative position
                     behavior: 'smooth'
                 });
             }
         }
-        // If it's a page link without #, let it navigate normally (no preventDefault)
+        // If it's a page link, let it navigate normally (no preventDefault)
     });
 });
 

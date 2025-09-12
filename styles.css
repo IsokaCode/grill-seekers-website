@@ -107,32 +107,42 @@ body {
 /* Contact Section Spacing */
 .contact {
     margin-bottom: 2rem;
+    scroll-margin-top: 110px; /* Account for fixed navbar + extra spacing */
 }
 
 /* Main Section Spacing */
+.hero {
+    scroll-margin-top: 110px;
+}
 
 .about {
     margin-bottom: 1rem;
+    scroll-margin-top: 110px;
 }
 
 .menu {
     margin-bottom: 1rem;
+    scroll-margin-top: 110px;
 }
 
 .packages {
     margin-bottom: 1rem;
+    scroll-margin-top: 110px;
 }
 
 .gallery {
     margin-bottom: 1rem;
+    scroll-margin-top: 110px;
 }
 
 .reviews {
     margin-bottom: 1rem;
+    scroll-margin-top: 110px;
 }
 
 .faq {
     margin-bottom: 1rem;
+    scroll-margin-top: 110px;
 }
 
 .cta-content {
