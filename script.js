@@ -6,6 +6,11 @@ const navMenu = document.querySelector('.nav-menu');
 const faqItems = document.querySelectorAll('.faq-item');
 const bookingForm = document.getElementById('bookingForm');
 
+// Debug: Check if elements are found
+console.log('Hamburger element:', hamburger);
+console.log('Nav menu element:', navMenu);
+console.log('Nav links found:', navLinks.length);
+
 // Navigation links handling
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -32,9 +37,16 @@ navLinks.forEach(link => {
 
 // Hamburger Menu Toggle
 if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log('Hamburger clicked'); // Debug log
+        
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        
+        console.log('Menu active:', navMenu.classList.contains('active')); // Debug log
         
         // Prevent body scroll when menu is open
         if (navMenu.classList.contains('active')) {
