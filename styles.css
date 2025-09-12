@@ -1916,9 +1916,10 @@ p {
     
     /* Show mobile menu when active */
     .nav-menu.active {
-        height: calc(100vh - 90px);
-        opacity: 1;
-        visibility: visible;
+        height: calc(100vh - 90px) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: flex !important;
     }
     
     /* Style mobile menu items */
@@ -1944,6 +1945,25 @@ p {
     
     .nav-menu li:last-child .nav-link {
         border-bottom: none;
+    }
+    
+    /* Force menu visibility - debugging */
+    .nav-menu.active {
+        position: fixed !important;
+        top: 90px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: calc(100vh - 90px) !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: flex !important;
+        z-index: 999 !important;
+        flex-direction: column !important;
+        padding: 1rem 0 !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
     }
     
     .nav-cta {

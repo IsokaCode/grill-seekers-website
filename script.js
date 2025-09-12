@@ -36,15 +36,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     const body = document.body;
     
+    console.log('Hamburger element:', hamburger);
+    console.log('Nav menu element:', navMenu);
+    
     if (hamburger && navMenu) {
         // Toggle menu on hamburger click
         hamburger.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
+            console.log('Hamburger clicked!');
+            
             // Toggle classes
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            console.log('Menu active:', navMenu.classList.contains('active'));
+            console.log('Menu classes:', navMenu.className);
             
             // Prevent body scroll when menu is open
             if (navMenu.classList.contains('active')) {
