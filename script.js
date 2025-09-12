@@ -6,11 +6,6 @@ const navMenu = document.querySelector('.nav-menu');
 const faqItems = document.querySelectorAll('.faq-item');
 const bookingForm = document.getElementById('bookingForm');
 
-// Debug: Check if elements are found
-console.log('Hamburger element:', hamburger);
-console.log('Nav menu element:', navMenu);
-console.log('Nav links found:', navLinks.length);
-
 // Navigation links handling
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -35,50 +30,65 @@ navLinks.forEach(link => {
     });
 });
 
-// Hamburger Menu Toggle
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        console.log('Hamburger clicked'); // Debug log
-        
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        
-        console.log('Menu active:', navMenu.classList.contains('active')); // Debug log
-        
-        // Prevent body scroll when menu is open
-        if (navMenu.classList.contains('active')) {
-            body.style.overflow = 'hidden';
-        } else {
-            body.style.overflow = '';
-        }
-    });
+// Hamburger Menu Toggle - Clean Implementation
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
     
-    // Close menu when clicking on nav links
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            // Only close menu if it's a section link (same page)
-            const href = link.getAttribute('href');
-            if (href.startsWith('#')) {
+    if (hamburger && navMenu) {
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle classes
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navMenu.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = '';
+            }
+        });
+        
+        // Close menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                const href = this.getAttribute('href');
+                
+                // Close menu for section links (same page)
+                if (href && href.startsWith('#')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.style.overflow = '';
+                }
+                // For page links, let the page navigation handle closing
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 body.style.overflow = '';
             }
-            // For page links, let the page navigation handle closing the menu
         });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            body.style.overflow = '';
-        }
-    });
-}
+        
+        // Close menu on window resize (if mobile menu is open)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+            }
+        });
+    }
+});
 
 // FAQ Accordion
 faqItems.forEach(item => {
