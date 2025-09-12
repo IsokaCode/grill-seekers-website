@@ -32,15 +32,26 @@ navLinks.forEach(link => {
 
 // Hamburger Menu Toggle
 if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         
-        // Prevent body scroll when menu is open
-        if (navMenu.classList.contains('active')) {
-            body.style.overflow = 'hidden';
-        } else {
+        const isActive = navMenu.classList.contains('active');
+        
+        if (isActive) {
+            // Closing menu
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
             body.style.overflow = '';
+            body.style.position = '';
+            body.style.top = '';
+        } else {
+            // Opening menu
+            hamburger.classList.add('active');
+            navMenu.classList.add('active');
+            body.style.overflow = 'hidden';
+            body.style.position = 'fixed';
+            body.style.top = '0';
+            body.style.width = '100%';
         }
     });
     
@@ -53,6 +64,9 @@ if (hamburger && navMenu) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
                 body.style.overflow = '';
+                body.style.position = '';
+                body.style.top = '';
+                body.style.width = '';
             }
             // For page links, let the page navigation handle closing the menu
         });
@@ -61,10 +75,20 @@ if (hamburger && navMenu) {
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            body.style.overflow = '';
+            if (navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.style.overflow = '';
+                body.style.position = '';
+                body.style.top = '';
+                body.style.width = '';
+            }
         }
+    });
+    
+    // Prevent menu from closing when clicking inside the menu
+    navMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
     });
 }
 
