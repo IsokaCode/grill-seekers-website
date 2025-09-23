@@ -1938,7 +1938,8 @@ p {
     
     .nav-link:hover {
         background: rgba(0, 0, 0, 0.05);
-        padding-left: 1rem;
+        /* remove lateral shift on hover */
+        padding-left: 0;
     }
     
     .nav-menu li:last-child .nav-link {
