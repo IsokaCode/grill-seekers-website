@@ -311,8 +311,8 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem 0 0; /* Flush logo to far left */
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo | centered links | CTA */
     align-items: center;
     height: 90px;
     width: 100%;
@@ -359,6 +359,7 @@ p {
     overflow-x: hidden;
     width: 100%;
     box-sizing: border-box;
+    justify-content: center; /* center links within middle column */
 }
 
 .nav-link {
