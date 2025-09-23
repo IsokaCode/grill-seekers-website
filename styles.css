@@ -23,6 +23,10 @@
     --transition: all 0.3s ease;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
@@ -192,6 +196,8 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
+    overflow-x: clip;
 }
 
 /* Page Content Containers */
@@ -203,6 +209,7 @@ p {
     padding: 3rem;
     box-shadow: none;
     max-width: 1200px;
+    overflow-x: clip;
 }
 
 .section-header {
@@ -342,6 +349,7 @@ p {
     display: flex;
     list-style: none;
     gap: 2rem;
+    overflow-x: hidden;
 }
 
 .nav-link {
@@ -1872,6 +1880,7 @@ p {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         height: calc(100vh - 90px);
         overflow-y: auto;
+        overflow-x: hidden;
     }
     
     .nav-menu.active {
