@@ -374,20 +374,8 @@ p {
     color: var(--primary-color);
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: var(--transition);
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
+/* Remove hover underline pseudo-element to prevent any layout shift or arrows */
+.nav-link::after { display: none; content: none; }
 
 .nav-cta {
     display: flex;
