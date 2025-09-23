@@ -320,6 +320,14 @@ p {
     overflow-x: hidden;
 }
 
+/* Improve logo alignment/positioning */
+.nav-logo, .logo-link {
+    display: flex;
+    align-items: center;
+}
+.logo-link { gap: 0.5rem; }
+.nav-logo img.logo { display: block; }
+
 .nav-logo {
     display: flex;
     align-items: center;
@@ -390,6 +398,18 @@ p {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+/* Center text inside Book Now button */
+.nav-cta .btn,
+.nav-cta .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 1.25rem;
+    line-height: 1;
+    font-weight: 600;
 }
 
 /* Hamburger Menu */
@@ -1800,11 +1820,6 @@ p {
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 0.75rem;
-}
-
-.highlight-phone {
-    color: #ff9900;
-    font-weight: 600;
 }
 
 .footer-contact i {
