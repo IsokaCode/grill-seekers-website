@@ -303,6 +303,8 @@ p {
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .nav-container {
@@ -313,6 +315,9 @@ p {
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .nav-logo {
@@ -335,7 +340,7 @@ p {
 .logo {
     height: 80px;
     width: auto;
-    max-width: 400px;
+    max-width: 100%;
 }
 
 .logo-text {
@@ -350,6 +355,8 @@ p {
     list-style: none;
     gap: 2rem;
     overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-link {
@@ -1881,6 +1888,8 @@ p {
         height: calc(100vh - 90px);
         overflow-y: auto;
         overflow-x: hidden;
+        width: 100vw;
+        box-sizing: border-box;
     }
     
     .nav-menu.active {
