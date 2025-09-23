@@ -242,6 +242,15 @@ if (bookingForm) {
         
         // Collect form data
         const formData = new FormData(bookingForm);
+        // Enforce minimum guests: 30 heads
+        const guestsValue = formData.get('guests');
+        if (guestsValue === '10-25' || guestsValue === 'Select') {
+            showNotification('Minimum booking is 30 heads across all packages. Please select 30 or more.', 'error');
+            submitBtn.classList.remove('loading');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            return;
+        }
         const dietaryRequirements = formData.getAll('dietary');
         const data = Object.fromEntries(formData.entries());
         if (dietaryRequirements.length > 0) {
