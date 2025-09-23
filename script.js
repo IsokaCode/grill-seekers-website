@@ -506,6 +506,37 @@ criticalImages.forEach(src => {
     img.src = src;
 });
 
+// Cookie consent banner
+(function manageCookieConsent() {
+    const CONSENT_KEY = 'gs_cookie_consent_v1';
+    if (localStorage.getItem(CONSENT_KEY)) return;
+
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.innerHTML = `
+      <div class="container">
+        <p>We use necessary cookies to make our site work. We’ll only set optional cookies if you agree. Read our <a href="cookie-policy.html" style="color:#fff; text-decoration:underline;">Cookie Policy</a>.</p>
+        <div class="cookie-actions">
+          <button class="btn btn-secondary" id="cookie-decline">Decline</button>
+          <button class="btn btn-primary" id="cookie-accept">Accept</button>
+        </div>
+      </div>`;
+    document.body.appendChild(banner);
+
+    const accept = document.getElementById('cookie-accept');
+    const decline = document.getElementById('cookie-decline');
+    const closeBanner = () => banner.remove();
+
+    accept.addEventListener('click', () => {
+        localStorage.setItem(CONSENT_KEY, 'accepted');
+        closeBanner();
+    });
+    decline.addEventListener('click', () => {
+        localStorage.setItem(CONSENT_KEY, 'declined');
+        closeBanner();
+    });
+})();
+
 // Enhanced form validation
 function validateForm(form) {
     const requiredFields = form.querySelectorAll('[required]');
