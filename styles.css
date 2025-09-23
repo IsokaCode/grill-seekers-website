@@ -1802,6 +1802,11 @@ p {
     margin-bottom: 0.75rem;
 }
 
+.highlight-phone {
+    color: #ff9900;
+    font-weight: 600;
+}
+
 .footer-contact i {
     color: var(--primary-color);
     width: 20px;
