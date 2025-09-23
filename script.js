@@ -6,6 +6,42 @@ const navMenu = document.querySelector('.nav-menu');
 const faqItems = document.querySelectorAll('.faq-item');
 const bookingForm = document.getElementById('bookingForm');
 
+// Lock-to-contact behavior when arriving with ?lock=contact
+(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('lock') === 'contact') {
+        const contact = document.querySelector('#contact');
+        const navbar = document.querySelector('.navbar');
+        const headerHeight = navbar ? navbar.offsetHeight : 90;
+        if (contact) {
+            // Jump to contact immediately
+            window.scrollTo({ top: Math.max(0, contact.offsetTop - headerHeight - 20), behavior: 'instant' in window ? 'instant' : 'auto' });
+
+            // Prevent scrolling above contact section
+            let minScroll = Math.max(0, contact.offsetTop - headerHeight - 20);
+            window.addEventListener('scroll', () => {
+                if (window.scrollY < minScroll) {
+                    window.scrollTo({ top: minScroll });
+                }
+            }, { passive: true });
+
+            // Also block wheel/keyboard attempts to go above
+            window.addEventListener('wheel', () => {
+                if (window.scrollY < minScroll) {
+                    window.scrollTo({ top: minScroll });
+                }
+            }, { passive: true });
+
+            window.addEventListener('keydown', (e) => {
+                if ((e.key === 'Home' || (e.key === 'ArrowUp' && window.scrollY <= minScroll))) {
+                    e.preventDefault();
+                    window.scrollTo({ top: minScroll });
+                }
+            });
+        }
+    }
+})();
+
 // Navigation links handling
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
