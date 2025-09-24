@@ -1874,21 +1874,21 @@ p {
     
     .nav-menu {
         position: fixed;
-        top: 90px;
+        top: 90px;               /* start directly below the navbar */
         left: 0;
         right: 0;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(15px);
         flex-direction: column;
-        padding: 2rem 0;
+        padding: 0.5rem 0;       /* tighter vertical padding to reduce whitespace */
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        transform: translateY(-100%);
+        transform-origin: top;   /* animate from the navbar edge */
         opacity: 0;
         visibility: hidden;
-        transition: transform 0.25s ease-out, opacity 0.3s ease, visibility 0.3s ease;
-        z-index: 6000; /* above navbar and hero */
+        max-height: 0;           /* collapsed by default */
+        transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.25s ease;
+        z-index: 6000;           /* above navbar and hero */
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        height: calc(100vh - 90px);
         overflow-y: auto;
         overflow-x: hidden;
         width: 100vw;
@@ -1896,18 +1896,12 @@ p {
     }
     
     .nav-menu.active {
-        transform: translateY(0);
         opacity: 1;
         visibility: visible;
+        max-height: 70vh;        /* do not take over the whole screen */
     }
     
-    .nav-menu li {
-        margin: 0;
-        padding: 0 2rem;
-        opacity: 1; /* ensure visible */
-        transform: none; /* prevent off-screen */
-        transition: none;
-    }
+    .nav-menu li { margin: 0; padding: 0 1.5rem; }
     
     .nav-menu.active li { opacity: 1; transform: none; }
     
@@ -1921,7 +1915,7 @@ p {
     
     .nav-link {
         display: block;
-        padding: 1rem 0;
+        padding: 0.9rem 0;
         font-size: 1.1rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         text-align: left;
@@ -1929,7 +1923,7 @@ p {
         color: var(--text-dark);
     }
     
-    .nav-link:hover { background: rgba(0, 0, 0, 0.05); }
+    .nav-link:hover { background: rgba(0, 0, 0, 0.06); }
     
     .nav-menu li:last-child .nav-link {
         border-bottom: none;
