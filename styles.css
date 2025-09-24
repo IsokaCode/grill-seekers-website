@@ -300,11 +300,11 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 5000; /* keep navbar and its children above page content */
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow: visible; /* allow mobile menu to overflow */
 }
 
 .nav-container {
@@ -1407,6 +1407,7 @@ p {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
     overflow: hidden;
+    z-index: 0; /* ensure hero sits below fixed navbar/nav-menu */
 }
 
 .faq-question {
@@ -1885,7 +1886,7 @@ p {
         opacity: 0;
         visibility: hidden;
         transition: transform 0.25s ease-out, opacity 0.3s ease, visibility 0.3s ease;
-        z-index: 2000;
+        z-index: 6000; /* above navbar and hero */
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         height: calc(100vh - 90px);
         overflow-y: auto;
