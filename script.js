@@ -69,6 +69,13 @@ navLinks.forEach(link => {
 
 // Hamburger Menu Toggle
 if (hamburger && navMenu) {
+    const stop = (e) => { e.stopPropagation(); };
+    // Prevent outside-closer from firing on touch/click within controls
+    ['click','touchstart','pointerdown'].forEach(evt => {
+        hamburger.addEventListener(evt, stop);
+        navMenu.addEventListener(evt, stop);
+    });
+
     hamburger.addEventListener('click', (e) => {
         e.stopPropagation();
         
@@ -109,8 +116,8 @@ if (hamburger && navMenu) {
         });
     });
     
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
+    // Close menu when clicking outside (use pointerdown to avoid flicker)
+    document.addEventListener('pointerdown', (e) => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
             if (navMenu.classList.contains('active')) {
                 hamburger.classList.remove('active');
@@ -122,11 +129,7 @@ if (hamburger && navMenu) {
             }
         }
     });
-    
-    // Prevent menu from closing when clicking inside the menu
-    navMenu.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
+    // note: stop handlers above already prevent propagation inside menu
 }
 
 // FAQ Accordion

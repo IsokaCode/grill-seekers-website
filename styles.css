@@ -318,6 +318,7 @@ p {
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+    position: relative; /* anchor for absolute-positioned hamburger on mobile */
 }
 
 .nav-logo {
@@ -1861,6 +1862,13 @@ p {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+        height: auto;
+        touch-action: manipulation; /* avoid ghost taps */
     }
     
     .nav-menu {
@@ -1876,10 +1884,8 @@ p {
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
-                    opacity 0.3s ease,
-                    visibility 0.3s ease;
-        z-index: 999;
+        transition: transform 0.25s ease-out, opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1200;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         height: calc(100vh - 90px);
         overflow-y: auto;
@@ -1924,11 +1930,7 @@ p {
         transition: all 0.3s ease;
     }
     
-    .nav-link:hover {
-        background: rgba(0, 0, 0, 0.05);
-        /* remove lateral shift on hover */
-        padding-left: 0;
-    }
+    .nav-link:hover { background: rgba(0, 0, 0, 0.05); }
     
     .nav-menu li:last-child .nav-link {
         border-bottom: none;
