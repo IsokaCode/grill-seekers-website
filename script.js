@@ -6,6 +6,14 @@ const navMenu = document.querySelector('.nav-menu');
 const faqItems = document.querySelectorAll('.faq-item');
 const bookingForm = document.getElementById('bookingForm');
 
+// iOS 100vh fix: set --vh to window.innerHeight * 1%
+function setViewportHeightUnit() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setViewportHeightUnit();
+window.addEventListener('resize', setViewportHeightUnit);
+
 // Lock-to-contact behavior when arriving with ?lock=contact
 (() => {
     const params = new URLSearchParams(window.location.search);

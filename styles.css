@@ -25,6 +25,7 @@
 
 html {
     overflow-x: hidden;
+    --vh: 1vh; /* iOS 100vh fix variable */
 }
 
 body {
@@ -1898,10 +1899,10 @@ p {
     .nav-menu.active {
         opacity: 1;
         visibility: visible;
-        max-height: 70vh;        /* do not take over the whole screen */
+        max-height: calc(var(--vh, 1vh) * 70); /* stable on iOS */
     }
     
-    .nav-menu li { margin: 0; padding: 0 1.5rem; }
+    .nav-menu li { margin: 0; padding: 0 1.25rem; }
     
     .nav-menu.active li { opacity: 1; transform: none; }
     
@@ -1923,7 +1924,11 @@ p {
         color: var(--text-dark);
     }
     
-    .nav-link:hover { background: rgba(0, 0, 0, 0.06); }
+    @media (prefers-reduced-motion: reduce) {
+        .nav-menu { transition: none; }
+        .nav-menu.active { transition: none; }
+        .nav-menu li { transition: none; }
+    }
     
     .nav-menu li:last-child .nav-link {
         border-bottom: none;
