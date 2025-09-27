@@ -1318,19 +1318,21 @@ p {
 /* Event Types Section */
 .event-types-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     margin-top: 3rem;
     text-align: center;
 }
 
 .event-type-card {
     background: white;
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: var(--transition);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .event-type-card:hover {
@@ -2099,6 +2101,16 @@ p {
         padding: 1.5rem 1rem;
     }
     
+    /* Event types extra small screen optimization */
+    .event-types-grid {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .event-type-card {
+        padding: 1.25rem;
+    }
+    
     .logo {
         height: 50px;
         width: auto;
@@ -2145,6 +2157,18 @@ p {
     
     .page-content {
         padding: 2rem 1.5rem;
+    }
+    
+    /* Event types mobile optimization */
+    .event-types-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .event-type-card {
+        padding: 1.5rem;
+        margin: 0;
     }
     
     .hero-title {
