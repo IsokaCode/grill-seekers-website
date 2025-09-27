@@ -1525,7 +1525,7 @@ p {
 
 .booking-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -1538,6 +1538,8 @@ p {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-left: 4px solid var(--primary-color);
     text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .booking-notice h3, .service-info h3 {
@@ -2111,6 +2113,16 @@ p {
         padding: 1.25rem;
     }
     
+    /* Booking info extra small screen optimization */
+    .booking-info {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .booking-notice, .service-info {
+        padding: 1.25rem;
+    }
+    
     .logo {
         height: 50px;
         width: auto;
@@ -2167,6 +2179,18 @@ p {
     }
     
     .event-type-card {
+        padding: 1.5rem;
+        margin: 0;
+    }
+    
+    /* Booking info mobile optimization */
+    .booking-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .booking-notice, .service-info {
         padding: 1.5rem;
         margin: 0;
     }
