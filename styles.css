@@ -64,7 +64,7 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 0;
     margin: 0;
-    padding: 3rem;
+    padding: 3rem 2rem;
     box-shadow: none;
 }
 
@@ -207,7 +207,7 @@ p {
     backdrop-filter: blur(10px);
     border-radius: 0;
     margin: 0 auto;
-    padding: 3rem;
+    padding: 3rem 2rem;
     box-shadow: none;
     max-width: 1200px;
     overflow-x: clip;
@@ -502,6 +502,7 @@ p {
     max-width: 800px;
     padding: 6rem 2rem 4rem;
     z-index: 1;
+    margin-top: 2rem;
 }
 
 .hero-title {
@@ -1944,6 +1945,7 @@ p {
     
     .hero-content {
         padding: 4rem 1.5rem 3rem;
+        margin-top: 1rem;
     }
     
     .hero-title {
@@ -2066,6 +2068,37 @@ p {
         padding-top: 80px;
     }
     
+    .hero-content {
+        padding: 3rem 1rem 2rem;
+        margin-top: 0.5rem;
+    }
+    
+    /* Extra small screen content padding */
+    .about-story,
+    .menu-section,
+    .packages-section,
+    .gallery-section,
+    .reviews-section,
+    .team-section,
+    .values-section,
+    .certifications-section,
+    .menu-info-section,
+    .packages-overview,
+    .booking-info-section,
+    .review-categories,
+    .event-types,
+    .testimonials-section,
+    .dietary-section,
+    .rating-overview,
+    .reviews-filter,
+    .gallery-filter {
+        padding: 1.5rem 1rem;
+    }
+    
+    .page-content {
+        padding: 1.5rem 1rem;
+    }
+    
     .logo {
         height: 50px;
         width: auto;
@@ -2088,6 +2121,32 @@ p {
 }
 
 @media (max-width: 768px) {
+    /* Content padding adjustments for mobile */
+    .about-story,
+    .menu-section,
+    .packages-section,
+    .gallery-section,
+    .reviews-section,
+    .team-section,
+    .values-section,
+    .certifications-section,
+    .menu-info-section,
+    .packages-overview,
+    .booking-info-section,
+    .review-categories,
+    .event-types,
+    .testimonials-section,
+    .dietary-section,
+    .rating-overview,
+    .reviews-filter,
+    .gallery-filter {
+        padding: 2rem 1.5rem;
+    }
+    
+    .page-content {
+        padding: 2rem 1.5rem;
+    }
+    
     .hero-title {
         font-size: 2rem;
     }
