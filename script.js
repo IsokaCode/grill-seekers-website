@@ -5,7 +5,6 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const faqItems = document.querySelectorAll('.faq-item');
 const bookingForm = document.getElementById('bookingForm');
-const packageToggleBtns = document.querySelectorAll('.package-toggle-btn');
 
 // iOS 100vh fix: set --vh to window.innerHeight * 1%
 function setViewportHeightUnit() {
@@ -65,11 +64,11 @@ navLinks.forEach(link => {
                 const navbar = document.querySelector('.navbar');
                 const headerHeight = navbar ? navbar.offsetHeight : 90;
                 const targetPosition = targetSection.offsetTop - headerHeight - 20; // Extra 20px for better spacing
-                
-                window.scrollTo({
+            
+            window.scrollTo({
                     top: Math.max(0, targetPosition), // Ensure we don't scroll to negative position
-                    behavior: 'smooth'
-                });
+                behavior: 'smooth'
+            });
             }
         }
         // If it's a page link, let it navigate normally (no preventDefault)
@@ -114,9 +113,9 @@ if (hamburger && navMenu) {
             // Only close menu if it's a section link (same page)
             const href = link.getAttribute('href');
             if (href.startsWith('#')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                body.style.overflow = '';
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.style.overflow = '';
                 body.style.position = '';
                 body.style.top = '';
                 body.style.width = '';
@@ -129,9 +128,9 @@ if (hamburger && navMenu) {
     document.addEventListener('pointerdown', (e) => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
             if (navMenu.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-                body.style.overflow = '';
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.style.overflow = '';
                 body.style.position = '';
                 body.style.top = '';
                 body.style.width = '';
@@ -580,25 +579,6 @@ function isValidPhone(phone) {
     const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
     return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
 }
-
-// Package toggle functionality
-packageToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const packageCard = btn.closest('.package-card');
-        const packageContent = packageCard.querySelector('.package-content');
-        const isExpanded = packageContent.classList.contains('expanded');
-        
-        if (isExpanded) {
-            packageContent.classList.remove('expanded');
-            btn.classList.remove('expanded');
-            btn.innerHTML = 'See More <i class="fas fa-chevron-down toggle-icon"></i>';
-        } else {
-            packageContent.classList.add('expanded');
-            btn.classList.add('expanded');
-            btn.innerHTML = 'See Less <i class="fas fa-chevron-up toggle-icon"></i>';
-        }
-    });
-});
 
 // Add error styles
 const errorStyles = document.createElement('style');
