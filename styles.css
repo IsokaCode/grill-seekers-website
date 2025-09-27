@@ -762,6 +762,11 @@ p {
     box-sizing: border-box;
 }
 
+/* Desktop styles - hide toggle button */
+.package-toggle-btn {
+    display: none;
+}
+
 .package-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow);
@@ -2193,8 +2198,17 @@ p {
         margin-bottom: 1.5rem;
     }
     
-    .package-card {
-        padding: 1.5rem;
+    .package-header {
+        padding: 1.25rem;
+    }
+    
+    .package-content-inner {
+        padding: 1.25rem;
+    }
+    
+    .package-toggle-btn {
+        padding: 0.6rem;
+        font-size: 0.85rem;
     }
     
     /* Reviews grid extra small screen optimization */
@@ -2359,7 +2373,54 @@ p {
     }
     
     .package-card {
-        padding: 2rem;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .package-header {
+        padding: 1.5rem;
+    }
+    
+    .package-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .package-content.expanded {
+        max-height: 1000px;
+    }
+    
+    .package-content-inner {
+        padding: 1.5rem;
+    }
+    
+    .package-toggle-btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        background: var(--light-bg);
+        border: none;
+        color: var(--primary-color);
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .package-toggle-btn:hover {
+        background: var(--secondary-color);
+        color: var(--white);
+    }
+    
+    .package-toggle-btn .toggle-icon {
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .package-toggle-btn.expanded .toggle-icon {
+        transform: rotate(180deg);
     }
     
     /* Reviews grid mobile optimization */

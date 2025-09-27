@@ -5,6 +5,7 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const faqItems = document.querySelectorAll('.faq-item');
 const bookingForm = document.getElementById('bookingForm');
+const packageToggleBtns = document.querySelectorAll('.package-toggle-btn');
 
 // iOS 100vh fix: set --vh to window.innerHeight * 1%
 function setViewportHeightUnit() {
@@ -579,6 +580,25 @@ function isValidPhone(phone) {
     const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
     return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
 }
+
+// Package toggle functionality
+packageToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const packageCard = btn.closest('.package-card');
+        const packageContent = packageCard.querySelector('.package-content');
+        const isExpanded = packageContent.classList.contains('expanded');
+        
+        if (isExpanded) {
+            packageContent.classList.remove('expanded');
+            btn.classList.remove('expanded');
+            btn.innerHTML = 'See More <i class="fas fa-chevron-down toggle-icon"></i>';
+        } else {
+            packageContent.classList.add('expanded');
+            btn.classList.add('expanded');
+            btn.innerHTML = 'See Less <i class="fas fa-chevron-up toggle-icon"></i>';
+        }
+    });
+});
 
 // Add error styles
 const errorStyles = document.createElement('style');
