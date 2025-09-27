@@ -684,8 +684,8 @@ p {
 
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -694,6 +694,8 @@ p {
     padding: 2.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .menu-category h3 {
@@ -744,7 +746,7 @@ p {
 
 .packages-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
 }
@@ -756,6 +758,8 @@ p {
     overflow: hidden;
     transition: var(--transition);
     position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .package-card:hover {
@@ -948,7 +952,7 @@ p {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
@@ -1011,7 +1015,7 @@ p {
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -1024,6 +1028,8 @@ p {
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: var(--transition);
     position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .review-card:hover {
@@ -1115,6 +1121,8 @@ p {
     transition: var(--transition);
     border: 1px solid rgba(0, 0, 0, 0.05);
     position: relative;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .testimonial-card:hover {
@@ -2123,6 +2131,51 @@ p {
         padding: 1.25rem;
     }
     
+    /* Menu grid extra small screen optimization */
+    .menu-grid {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .menu-category {
+        padding: 1.5rem;
+    }
+    
+    /* Packages grid extra small screen optimization */
+    .packages-grid {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .package-card {
+        padding: 1.5rem;
+    }
+    
+    /* Reviews grid extra small screen optimization */
+    .reviews-grid {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .review-card {
+        padding: 1.5rem;
+    }
+    
+    /* Gallery grid extra small screen optimization */
+    .gallery-grid {
+        gap: 0.75rem;
+    }
+    
+    /* Testimonials grid extra small screen optimization */
+    .testimonials-grid {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
     .logo {
         height: 50px;
         width: auto;
@@ -2193,6 +2246,56 @@ p {
     .booking-notice, .service-info {
         padding: 1.5rem;
         margin: 0;
+    }
+    
+    /* Menu grid mobile optimization */
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .menu-category {
+        padding: 2rem;
+    }
+    
+    /* Packages grid mobile optimization */
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .package-card {
+        padding: 2rem;
+    }
+    
+    /* Reviews grid mobile optimization */
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .review-card {
+        padding: 2rem;
+    }
+    
+    /* Gallery grid mobile optimization */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Testimonials grid mobile optimization */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .testimonial-card {
+        padding: 2rem;
     }
     
     .hero-title {
