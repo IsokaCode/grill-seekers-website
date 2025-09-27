@@ -2066,6 +2066,52 @@ p {
 }
 
 @media (max-width: 480px) {
+    /* Extra small screen font size adjustments */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
+    h4 { font-size: 1.1rem; }
+    h5 { font-size: 1rem; }
+    h6 { font-size: 0.9rem; }
+    
+    p { font-size: 0.9rem; }
+    
+    .section-header p { font-size: 0.95rem; }
+    
+    .hero-title { font-size: 1.75rem; }
+    .hero-subtitle { font-size: 0.95rem; }
+    
+    .section-header h2 { font-size: 1.5rem; }
+    
+    .btn { font-size: 0.85rem; }
+    .btn-large { font-size: 0.9rem; }
+    
+    .menu-category h3 { font-size: 1.1rem; }
+    .menu-item h4 { font-size: 1rem; }
+    .menu-item p { font-size: 0.8rem; }
+    
+    .package-card h3 { font-size: 1.1rem; }
+    .price { font-size: 1.75rem; }
+    
+    .review-card p { font-size: 0.85rem; }
+    .review-author strong { font-size: 0.95rem; }
+    
+    .testimonial-text { font-size: 0.85rem; }
+    .client-info h4 { font-size: 0.95rem; }
+    
+    .event-type-header h3 { font-size: 1.1rem; }
+    .event-type-card p { font-size: 0.85rem; }
+    
+    .booking-notice h3, .service-info h3 { font-size: 1.1rem; }
+    .booking-notice p, .service-info p { font-size: 0.85rem; }
+    
+    .contact-method h4 { font-size: 0.95rem; }
+    .contact-method p { font-size: 0.85rem; }
+    
+    .faq-category-header h3 { font-size: 1rem; }
+    .faq-question h4 { font-size: 0.85rem; }
+    .faq-answer p { font-size: 0.8rem; }
+    
     .container {
         padding: 0 1rem;
     }
@@ -2182,7 +2228,7 @@ p {
     }
     
     .logo-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .nav-menu {
@@ -2192,12 +2238,58 @@ p {
     
     .nav-cta .btn {
         padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
 }
 
 @media (max-width: 768px) {
+    /* Mobile font size adjustments */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 1rem; }
+    
+    p { font-size: 0.95rem; }
+    
+    .section-header p { font-size: 1rem; }
+    
+    .hero-title { font-size: 2rem; }
+    .hero-subtitle { font-size: 1rem; }
+    
+    .section-header h2 { font-size: 1.75rem; }
+    
+    .btn { font-size: 0.9rem; }
+    .btn-large { font-size: 0.95rem; }
+    
+    .menu-category h3 { font-size: 1.25rem; }
+    .menu-item h4 { font-size: 1.1rem; }
+    .menu-item p { font-size: 0.85rem; }
+    
+    .package-card h3 { font-size: 1.25rem; }
+    .price { font-size: 2rem; }
+    
+    .review-card p { font-size: 0.9rem; }
+    .review-author strong { font-size: 1rem; }
+    
+    .testimonial-text { font-size: 0.9rem; }
+    .client-info h4 { font-size: 1rem; }
+    
+    .event-type-header h3 { font-size: 1.25rem; }
+    .event-type-card p { font-size: 0.9rem; }
+    
+    .booking-notice h3, .service-info h3 { font-size: 1.2rem; }
+    .booking-notice p, .service-info p { font-size: 0.9rem; }
+    
+    .contact-method h4 { font-size: 1rem; }
+    .contact-method p { font-size: 0.9rem; }
+    
+    .faq-category-header h3 { font-size: 1.1rem; }
+    .faq-question h4 { font-size: 0.9rem; }
+    .faq-answer p { font-size: 0.85rem; }
+    
     /* Content padding adjustments for mobile */
     .about-story,
     .menu-section,
@@ -2298,21 +2390,12 @@ p {
         padding: 2rem;
     }
     
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .section-header h2 {
-        font-size: 2rem;
-    }
-    
     .booking-form {
         padding: 1.5rem;
     }
     
     .btn-large {
         padding: 1rem 1.5rem;
-        font-size: 1rem;
     }
     
     .process-steps {
@@ -2328,16 +2411,8 @@ p {
         padding: 0.75rem 1rem;
     }
     
-    .faq-category-header h3 {
-        font-size: 1.2rem;
-    }
-    
     .faq-question {
         padding: 0.75rem 1rem;
-    }
-    
-    .faq-question h4 {
-        font-size: 0.9rem;
     }
     
     .faq-answer {
