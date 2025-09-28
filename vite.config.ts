@@ -32,6 +32,7 @@ export default defineConfig({
         packages: './packages.html',
         gallery: './gallery.html',
         reviews: './reviews.html',
+        contact: './contact.html',
         'privacy-policy': './privacy-policy.html'
       }
     }
