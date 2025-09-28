@@ -252,7 +252,7 @@ p {
     cursor: pointer;
     transition: var(--transition);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .btn-primary {
@@ -756,7 +756,7 @@ p {
     background: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
-    overflow: hidden;
+    overflow: visible;
     transition: var(--transition);
     position: relative;
     max-width: 100%;
@@ -959,7 +959,7 @@ p {
 
 .gallery-item {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
     transition: var(--transition);
@@ -1419,7 +1419,7 @@ p {
     margin-bottom: 0.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
-    overflow: hidden;
+    overflow: visible;
     z-index: 0; /* ensure hero sits below fixed navbar/nav-menu */
 }
 
@@ -1459,7 +1459,7 @@ p {
 
 .faq-item.active .faq-answer {
     padding: 0 2rem 1.5rem;
-    max-height: 200px;
+    max-height: none;
 }
 
 /* FAQ Category Headings */
@@ -1512,10 +1512,10 @@ p {
 }
 
 .faq-category .faq-grid {
-    max-height: 2000px;
+    max-height: none;
     opacity: 1;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.3s ease, margin-bottom 0.3s ease;
+    overflow: visible;
+    transition: opacity 0.3s ease, margin-bottom 0.3s ease;
     margin-bottom: 0;
 }
 
@@ -1523,6 +1523,7 @@ p {
     max-height: 0;
     opacity: 0;
     margin-bottom: 0;
+    overflow: hidden;
 }
 
 /* Contact Section */
