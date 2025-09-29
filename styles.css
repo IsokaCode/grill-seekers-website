@@ -779,24 +779,25 @@ p {
 
 .package-ribbon {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    background: var(--white);
-    color: var(--primary-color);
-    padding: 0.35rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
+    top: 12px;           /* sit neatly in the corner */
+    left: 12px;
+    right: auto;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.35rem 0.65rem; /* compact badge size */
+    border-radius: 8px;       /* badge look (no diagonal overlap) */
+    transform: none;          /* remove diagonal banner */
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: .2px;
-    box-shadow: var(--shadow-light);
+    line-height: 1;
+    z-index: 10;
 }
 
 .package-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
-    padding: 2rem 2.5rem;
+    padding: 2rem;
     text-align: center;
-    position: relative;
 }
 
 .package-header h3 {
@@ -1974,7 +1975,7 @@ p {
         font-size: 1.1rem;
     }
     
-
+    
     .hero-cta {
         flex-direction: column;
         align-items: center;
