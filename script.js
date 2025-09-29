@@ -517,6 +517,21 @@ criticalImages.forEach(src => {
     img.src = src;
 });
 
+// Lightbox for gallery images
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        const img = item.querySelector('img');
+        const title = item.querySelector('.gallery-overlay h4')?.textContent || '';
+        const desc = item.querySelector('.gallery-overlay p')?.textContent || '';
+        if (img) {
+            item.addEventListener('click', () => {
+                openGalleryModal(img.getAttribute('src'), title, desc);
+            });
+        }
+    });
+});
+
 
 // Enhanced form validation
 function validateForm(form) {

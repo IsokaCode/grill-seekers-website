@@ -959,10 +959,11 @@ p {
 
 .gallery-item {
     position: relative;
-    overflow: visible;
+    overflow: hidden; /* keep overlays and images neatly clipped */
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
     transition: var(--transition);
+    cursor: zoom-in; /* indicate click-to-enlarge */
 }
 
 .gallery-item:hover {
@@ -989,12 +990,13 @@ p {
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     color: var(--white);
     padding: 2rem 1.5rem 1.5rem;
-    transform: translateY(100%);
-    transition: var(--transition);
+    opacity: 0;              /* start hidden without shifting layout */
+    transform: none;         /* avoid off-screen overflow */
+    transition: opacity 0.3s ease;
 }
 
 .gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
+    opacity: 1;
 }
 
 .gallery-overlay h4 {
