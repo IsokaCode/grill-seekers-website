@@ -33,3 +33,4 @@ jobs:
           server-dir: ${{ secrets.REMOTE_DIR }}
           local-dir: dist/
           dangerous-clean-slate: false
+          log-level: verbose
