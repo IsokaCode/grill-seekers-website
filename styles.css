@@ -779,22 +779,24 @@ p {
 
 .package-ribbon {
     position: absolute;
-    top: 20px;
-    right: -35px;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 0.5rem 3rem;
-    transform: rotate(45deg);
-    font-size: 0.875rem;
-    font-weight: 600;
-    z-index: 10;
+    top: 12px;
+    right: 12px;
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: .2px;
+    box-shadow: var(--shadow-light);
 }
 
 .package-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
-    padding: 2rem;
+    padding: 2rem 2.5rem;
     text-align: center;
+    position: relative;
 }
 
 .package-header h3 {
